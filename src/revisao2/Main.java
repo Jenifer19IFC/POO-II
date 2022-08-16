@@ -25,12 +25,19 @@ public class Main {
 		prof.listaDisciplinaProfessor.addLast(disciplina);
 		//prof.mostrarListaDeDisciplinas(prof.listaDisciplinaProfessor);
 		
+		Professor prof2 = new Professor();
+		prof2.setNome("Patricia");
+		prof2.setTitulacao("Mestrado");
+		prof2.listaDisciplinaProfessor.add(disciplina2);
+		prof2.listaDisciplinaProfessor.addLast(disciplina);
+		prof2.mostrarListaDeDisciplinas(prof2.listaDisciplinaProfessor);
+		
 		System.out.println("Professor:");
-		System.out.println(prof);
+		System.out.println(prof2);
 		
 		Aluno aluno = new Aluno();
 		aluno.setNome("Jênifer");
-		aluno.setMatricula(123);
+		aluno.setMatricula(10);
 		aluno.listaDisciplinaAluno.add(disciplina);
 		aluno.listaDisciplinaAluno.add(disciplina2);
 		aluno.listaDisciplinaAluno.add(disciplina3);
@@ -42,7 +49,7 @@ public class Main {
 		
 		
 		System.out.println("\nAluno:");
-		System.out.println(aluno2);
+		System.out.println(aluno);
 		
 		Secretaria secretaria = new Secretaria();
 		System.out.println("\n");
