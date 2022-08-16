@@ -12,7 +12,7 @@ public class Aluno extends Pessoa{
 	}
 
 	public void setMatricula(int matricula) {
-		if(matricula > 0 && matricula < 1000)
+		if(matricula > 0 && matricula <= 1000)
 			this.matricula = matricula;
 		else
 			System.out.println("Matrícula inválida");
