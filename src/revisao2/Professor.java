@@ -2,8 +2,6 @@ package revisao2;
 
 import java.util.LinkedList;
 
-import revisao.Aluno;
-
 public class Professor extends Pessoa{
 
 	String titulacao;
