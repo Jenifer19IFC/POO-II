@@ -3,7 +3,7 @@ package atendimentoMedico;
 import java.text.ParseException;
 import java.util.Scanner;
 
-public class MainUsuarioMultidioma {
+public class MainUsuarioMultIdioma {
 
 	public static void main(String[] args) throws ParseException {
 		
