@@ -1,5 +1,6 @@
 package atendimentoMedico;
-
+import java.util.MissingResourceException;
+import java.util.ResourceBundle;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -17,6 +18,8 @@ import java.util.Locale;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
+import java.util.MissingResourceException;
+import java.util.ResourceBundle;
 public class Main {
 
 	public static void main(String[] args) throws ParseException {

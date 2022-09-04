@@ -1,0 +1,16 @@
+<list>
+  <injecaoDependenciaPaiFilha.Aluno>
+    <nome>Jenifer</nome>
+    <matricula>12345</matricula>
+    <cpf>102.345.324-00</cpf>
+    <dataNascimento>10/06/2002</dataNascimento>
+    <email>jenifergoedert10@gmail.com</email>
+  </injecaoDependenciaPaiFilha.Aluno>
+  <injecaoDependenciaPaiFilha.Aluno>
+    <nome>Vanessa</nome>
+    <matricula>44444</matricula>
+    <cpf>334.323.541-00</cpf>
+    <dataNascimento>12/05/2001</dataNascimento>
+    <email>vanessa@gmail.com</email>
+  </injecaoDependenciaPaiFilha.Aluno>
+</list>

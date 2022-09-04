@@ -1,24 +1,29 @@
 package atendimentoMedico;
 
-import java.util.Date;
-import java.util.Iterator;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
-public class NewMain {
+public class EnviaTraducao {
 
-	public static void main(String[] args) throws ParseException {
+	protected Idioma idioma;
+	
+	public  EnviaTraducao(Idioma idioma) {
+		this.idioma = idioma;
+	}
+	
+	public void inicia() throws ParseException {
 		
 		Scanner input = new Scanner(System.in);
 		
 		Pessoa pessoa = new Pessoa();
 		Paciente paciente = new Paciente();
 		DateFormat dateFormat1 = new SimpleDateFormat("dd/MM/yyyy");
-		//AQUIII
+		
 		Paciente paciente1 = new Paciente();
 		paciente1.setNome("Ruan");
 		String dataPac1 = "10/07/2000";
@@ -87,29 +92,24 @@ public class NewMain {
 		listMedicos.add(medicoDanubia);
 		
 		
-		System.out.println("\n---------- ATENDIMENTO MÉDICO ----------\n");
+		System.out.println(idioma.atendimentoMedico());
 		
 		while(true) {
 			
-			System.out.println("----- MENU -----\n"
-					+ "1 - Médicos e especialidades\n"
-					+ "2 - Atendimento\n"
-					+ "3 - Sair do programa");
+			System.out.println(idioma.menu());
 			int menuOp = input.nextInt();
 			
 				if(menuOp == 1) {
 					
-						System.out.println("O que deseja fazer?\n"
-								+ "1 - Acessar lista de médicos e especialidades\n"
-								+ "0 - Sair");
+						System.out.println(idioma.menuOp1());
 						int medicoOp = input.nextInt();
 						
 						if(medicoOp == 1) {
-							System.out.println(" -- LISTA DE MÉDICOS E SUAS ESPECIALIDADES:");
+							System.out.println(idioma.medicosEspecialidades());
 							for(int i = 0; i < listMedicos.size(); i++){
 							    System.out.println(listMedicos.get(i));
 							}	
-							System.out.println("\nDigite 0 para voltar");
+							System.out.println(idioma.voltar0());
 							int voltar = input.nextInt();
 						}
 						else {
@@ -120,33 +120,27 @@ public class NewMain {
 				
 				if(menuOp == 2) {
 	
-						System.out.println("\nLeia abaixo com atenção:"
-								+ "\n 0 - Paciente corre risco de morte?"
-								+ "\n 1 - Sintomas fortes repentinos/constantes?"
-								+ "\n 2 - Apesar de sintomas leves, há necessidade de uma consulta?"
-								+ "\n 3 - Agendar uma consulta/pegar nova receita ou remédio?"
-								+ "\n 4 - Apenas exames de rotina?");
+						System.out.println(idioma.menuOp2());
 						
-						System.out.println("\n1 - Agora, responda com 'true' somente a alternativa que corresponde com a sua necessidade:");
+						System.out.println(idioma.trueFalse());
 						
 						atendimento = new Atendimento();
-						System.out.println("\nAternativa 0?");
+						System.out.println(idioma.alt0());
 						boolean resp0 = input.nextBoolean();
-						System.out.println(" \nAternativa 1?");
+						System.out.println(idioma.alt1());
 						boolean resp1 = input.nextBoolean();
-						System.out.println(" \nAternativa 2?");
+						System.out.println(idioma.alt2());
 						boolean resp2 = input.nextBoolean();
-						System.out.println(" \nAternativa 3?");
+						System.out.println(idioma.alt3());
 						boolean resp3 = input.nextBoolean();
-						System.out.println(" \nAternativa 4?");
+						System.out.println(idioma.alt4());
 						boolean resp4 = input.nextBoolean();
 						
 						boolean vetRespostas[] = {resp0, resp1, resp2, resp3, resp4};
 						
 						atendimento.calcularPrioridade(vetRespostas);
 						
-						System.out.println("OBS: Prioridade máxima é 0."
-								+ "\\nDigite o n° da prioridade designada a você");
+						System.out.println(idioma.digitarPrioridade());
 						int prioPaciente = input.nextInt();
 						
 						atendimento.setPrioridade(prioPaciente);
@@ -156,7 +150,7 @@ public class NewMain {
 						
 						input.nextLine();
 						
-						System.out.println("\nQual o seu nome?");
+						System.out.println(idioma.nomePaciente());
 						String nomePaciente = input.nextLine();
 						paciente.setNome(nomePaciente);
 						
@@ -165,23 +159,23 @@ public class NewMain {
 					    //Caso queira com horas junto: HH:mm:ss
 					    String dataString = dateFormat.format(dataAtual);
 					    
-						System.out.println("\nDigite a data de nascimento no formato: dd/MM/yyyy ");
+						System.out.println(idioma.digitarDataNascimento());
 						String dataNascimento = input.nextLine();
 						
 						//Transformar String para Date
 						SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy"); 
 						Date dataFormatada = formato.parse(dataNascimento);
 						paciente.setDataNascimento(dataFormatada);	
-						System.out.println("\nIdade: ");
+						System.out.println(idioma.idade());
 						System.out.println(paciente.calcularIdade(dataNascimento, dataString));
 						
 						atendimento.setPaciente(paciente);
 						
-						System.out.println("\nLista de médicos:");
+						System.out.println(idioma.listaMedicos());
 						for (Medico p : listMedicos) {
 							System.out.println(p);
 						}
-						System.out.println("\nDigite o número do seu médico na ordem em que aparece.");
+						System.out.println(idioma.digitarNumMedico());
 						int numMedico = input.nextInt();
 						
 						if(numMedico == 1) {
@@ -198,7 +192,7 @@ public class NewMain {
 						operacao = new Operacao();
 						atestado = new Atestado();
 						
-						System.out.println("\nDigite a data de início da consulta no formato: dd/MM/yyyy HH:mm:ss");
+						System.out.println(idioma.digitarInicioConsulta());
 						String dataInicio = input.nextLine();
 						SimpleDateFormat formatoInicio = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss"); 
 						Date dataFormatadaInicio = formatoInicio.parse(dataInicio);
@@ -238,26 +232,26 @@ public class NewMain {
 						listAtendimentos.add(atendimento4);
 						listAtendimentos.add(atendimento);
 						listaAtendimento.comparadorPrioridade(listAtendimentos);
-						System.out.println("\nLista de atendimento ordenada por prioridade:");
+						System.out.println(idioma.listaPorPrioridade());
 						listaAtendimento.mostrarLista(listAtendimentos);
 						
-						System.out.println("\n Aguarde ser chamado...");
+						System.out.println(idioma.aguardar());
 						
-						System.out.println("\nDigite a data de fim da consulta no formato: dd/MM/yyyy HH:mm:ss");
+						System.out.println(idioma.digitarFimConsulta());
 						String dataFim = input.nextLine();
 						SimpleDateFormat formatoFim = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss"); 
 						Date dataFormatadaFim = formatoFim.parse(dataFim);
 						atestado.setFim(dataFormatadaFim);
 						System.out.println(dataFormatadaFim);
 						
-						System.out.println("\nDuração do atendimento:");
+						System.out.println(idioma.duracaoAtendimento());
 						operacao.tempoTotal(dataFormatadaInicio, dataFormatadaFim);
 
 						listAtendimentos.add(atendimento);
 	
 						atendimento.setEstado(4);
 						
-						System.out.println("\nEmitir atestado? 1 - Sim e 2 - Não");
+						System.out.println(idioma.emitirAtestadoSimNao());
 						int emitirAtestado = input.nextInt();
 						
 						if(emitirAtestado == 1) {
@@ -266,13 +260,13 @@ public class NewMain {
 						
 					}
 				if(menuOp == 3) {
-					System.out.println("\n Fim do programa.");
+					System.out.println(idioma.fimPrograma());
 					System.exit(0);
 				}
 					
 		}//while menu
 		
-
+		
+		
 	}
-
 }
