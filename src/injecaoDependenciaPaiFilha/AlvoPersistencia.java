@@ -5,7 +5,7 @@ import java.util.List;
 
 public class AlvoPersistencia {
 	
-	public void envia(List listAlunos) throws IOException {
+	public void salva(List listAlunos) throws IOException {
 		
 	}
 	

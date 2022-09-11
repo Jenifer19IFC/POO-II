@@ -57,7 +57,7 @@ public class Main {
 		alvo = new AlvoXML();
 		enviaPersistencia = new EnviaPersistencia(alvo);
 		enviaPersistencia.dispararArquivo(listAlunos);
-		
+		 
 		
 		
 		

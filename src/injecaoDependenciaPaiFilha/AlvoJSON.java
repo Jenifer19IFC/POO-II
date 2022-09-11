@@ -8,7 +8,7 @@ import com.google.gson.Gson;
 
 public class AlvoJSON extends AlvoPersistencia{
 
-	public void envia(List listAlunos) throws IOException {
+	public void salva(List listAlunos) throws IOException {
 		
 		String jsonUser = new Gson().toJson(listAlunos);
 		

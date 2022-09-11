@@ -14,8 +14,7 @@ public class EnviaPersistencia {
 	}
 	
 	public void dispararArquivo(List listAlunos) throws IOException {
-		alvo.envia(listAlunos);
+		alvo.salva(listAlunos);
 	}
-	
 	
 }

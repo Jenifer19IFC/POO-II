@@ -10,7 +10,7 @@ import com.thoughtworks.xstream.io.xml.DomDriver;
 
 public class AlvoXML extends AlvoPersistencia{
 	
-	public void envia(List listAlunos) throws IOException {
+	public void salva(List listAlunos) throws IOException {
 			
 		XStream xstream = new XStream(new DomDriver());
 		
