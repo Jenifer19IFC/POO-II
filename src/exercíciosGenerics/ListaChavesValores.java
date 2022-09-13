@@ -35,6 +35,9 @@ public class ListaChavesValores {
 		    if(chave.equals(this.listChavesValores.get(i).getKey())) {
 		    	System.out.println("Chave: " + this.listChavesValores.get(i).getKey() + " - Valor: " + this.listChavesValores.get(i).getValue());	
 		    	break;
+		    }else {
+		    	System.out.println("Não existe");
+		    	break;
 		    }
 		}
 

@@ -30,6 +30,17 @@ public class ChaveValor<V> {
 		this.value = value;
 	}
 
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("ChaveValor [key=");
+		builder.append(key);
+		builder.append(", value=");
+		builder.append(value);
+		builder.append("]");
+		return builder.toString();
+	}
+
 	
 
 	

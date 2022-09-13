@@ -1,6 +1,6 @@
 package exercíciosGenerics;
 
-public class Produto<T> {
+public class Produto<T> { 
 	
 	private T id;
 	double valor;

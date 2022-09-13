@@ -28,7 +28,7 @@ public class MainChaveValor {
 		list.mostrarLista();
 		
 		System.out.println("\nBUSCA:");
-		list.buscaChave("CV04");
+		list.buscaChave("CV07");
 		
 	}
 
