@@ -2,18 +2,11 @@ package exercíciosGenerics;
 
 public class Produto<T> {
 	
-	String produto;
 	private T id;
 	double valor;
 	String dataFabricacao;
 	String dataVencimento;
 	
-	public String getProduto() {
-		return produto;
-	}
-	public void setProduto(String produto) {
-		this.produto = produto;
-	}
 	public T getId() {
 		return id;
 	}
@@ -41,9 +34,7 @@ public class Produto<T> {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("SoftwareProdutos [produto=");
-		builder.append(produto);
-		builder.append(", id=");
+		builder.append("Produto [id=");
 		builder.append(id);
 		builder.append(", valor=");
 		builder.append(valor);
@@ -54,6 +45,7 @@ public class Produto<T> {
 		builder.append("]");
 		return builder.toString();
 	}
+	
 	
 
 	
