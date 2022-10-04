@@ -1,4 +1,4 @@
-package TestesDeCodigo;
+package testesDeCodigo;
 
 public class PessoaMain {
 

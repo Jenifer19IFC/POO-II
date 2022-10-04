@@ -1,4 +1,4 @@
-package TestesDeCodigo;
+package testesDeCodigo;
 
 import junit.framework.TestCase;
 
